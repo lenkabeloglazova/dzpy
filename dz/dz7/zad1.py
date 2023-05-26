@@ -8,21 +8,15 @@
 # Ввод: пара-ра-рам рам-пам-папам па-ра-па-дам
 # Вывод: Парам пам-пам'''
 
-def rhythm(str):
-    str = str.split()
-    list_1 = []
-    for word in str:
-        sum_w = 0
-        for i in word:
-            if i in 'аеёиоуыэюя':
-
-                sum_w += 1
-        list_1.append(sum_w)
-    return len(list_1) == list_1.count(list_1[0])
+def isRithm(st, alfabet) -> bool:
+    return len(set(map(lambda itm: sum(map(lambda item: itm.count(item), alfabet)), st.split(" ")))) < 2
 
 
-str_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
-if rhythm(str_1):
-    print('Парам пам-пам')
+
+lst_alfa = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
+# st = "пар-ра-рам рам-папам па-па-да"
+st = input('Введите строку стихотворения: ')
+if isRithm(st, lst_alfa):
+    print("Парам пам-пам")
 else:
-    print('Пам парам')
+    print("Пам парам")
