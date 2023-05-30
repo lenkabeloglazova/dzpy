@@ -7,7 +7,7 @@ def show_data():
 def new_data():
     """добавляет строку в справочник"""
     with open('data.txt', 'a', encoding='utf-8') as file:
-        file.write(input('Введите новую строку: '+ '\n') )
+        file.write(input('Введите ФИО : '+ '\n') )
     
 
 def find_data():
